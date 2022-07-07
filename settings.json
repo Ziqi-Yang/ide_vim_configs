@@ -1,0 +1,232 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "editor.fontSize": 19,
+
+    // tips: (more to see at the offical github repo)
+    // gd - go to definitin
+    // gh - show types info. and errors
+    "vim.leader": "<space>",
+    "vim.hlsearch": true,
+    "vim.easymotion": true, // <leader><leader> s or 2s
+    "vim.surround": true, // visual mode key: S
+    "vim.sneak": true, // normal mode key: s (forward) or S (backward)
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": false,
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+        "<C-a>": false
+    },
+    "vim.enableNeovim": true, // linux
+    // "vim.neovimUseConfigFile": true,
+    // "vim.neovimConfigPath": "/home/zarkli/.config/nvim/init.lua",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["k", "k"],
+            "after": ["<Esc>"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "c","e"],
+            "commands": [   
+                "workbench.action.debug.start"
+            ]
+        },
+      ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+
+    "todo-tree.general.tags": [
+        "BUG",
+        "NOTICE",
+        "FIXME",
+        "TODO",
+        "DONE",
+        "[]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "todo-tree.highlights.defaultHighlight": {
+        "foreground": "white",
+        "background": "yellow",
+        "icon": "check",
+        "rulerColour": "yellow",
+        "type": "tag",
+        "iconColour": "yellow"
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO":{
+            "background": "#c04851",
+            "rulerColour": "#c04851",
+            "iconColour": "#c04851",
+            "gutterIcon": "quote",
+            "icon": "quote",
+        },
+        "NOTICE":{
+            "background": "#fba414",
+            "iconColour": "#fba414",
+            "gutterIcon": "stop",
+            "icon": "stop",
+        },
+        "BUG": {
+            "icon": "bug",
+            "background": "#cc163a",
+            "iconColour": "#cc163a",
+        },
+        "FIXME": {
+            "icon": "flame",
+            "background": "#ebb10d",
+            "iconColour": "#ebb10d",
+            // "icon": "beaker"
+        },
+        "DONE": {
+            "icon": "check-circle-fill",
+            "background": "#207f4c",
+            "iconColour": "#207f4c",
+        }
+    },
+    "todo-tree.highlights.useColourScheme": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.wordWrap": "on",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code',Consolas,'Courier New', monospace",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+
+    // Latex workshop
+    "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-shell-escape",
+            "-file-line-error",
+            "-pdf",
+            "%DOC%"
+            ]
+          },
+          {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-shell-escape",
+            "-file-line-error",
+            "%DOC%"
+              ]
+          },          
+          {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-shell-escape",
+            "-file-line-error",
+            "%DOC%"
+            ]
+          },
+          {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+            "%DOCFILE%"
+            ]
+          }
+        ],
+    "latex-workshop.latex.recipes": [
+          {
+            "name": "xelatex",
+            "tools": [
+            "xelatex"
+                        ]
+                  },
+          {
+            "name": "latexmk",
+            "tools": [
+            "latexmk"
+                        ]
+          },
+
+          {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+            "pdflatex",
+            "bibtex",
+            "pdflatex",
+            "pdflatex"
+                        ]
+          }
+        ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.hover.preview.enabled":true,
+    "latex-workshop.hover.preview.scale":0.7,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+    ],
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.confirmSync": false,
+    "notebook.markup.fontSize": 16,
+    "remote.SSH.remotePlatform": {
+        "region-11.autodl.com": "linux"
+    },
+    "glassit.alpha": 255,
+    "terminal.integrated.inheritEnv": false,
+    "editor.linkedEditing": true,
+    "go.toolsManagement.autoUpdate": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.guides.bracketPairs": true,
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "http.proxy": "http://127.0.0.1:7890"
+
+}
