@@ -17,7 +17,7 @@
     "vim.handleKeys": {
         "<C-a>": false
     },
-    "vim.enableNeovim": true, // linux
+    // "vim.enableNeovim": true, // linux
     // "vim.neovimUseConfigFile": true,
     // "vim.neovimConfigPath": "/home/zarkli/.config/nvim/init.lua",
     "vim.insertModeKeyBindings": [
@@ -121,76 +121,97 @@
     "explorer.confirmDelete": false,
 
     // Latex workshop
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
     "latex-workshop.latex.tools": [
-          {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-shell-escape",
-            "-file-line-error",
-            "-pdf",
-            "%DOC%"
-            ]
-          },
-          {
+        {
             "name": "xelatex",
             "command": "xelatex",
             "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-shell-escape",
-            "-file-line-error",
-            "%DOC%"
-              ]
-          },          
-          {
+                "-shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
             "name": "pdflatex",
             "command": "pdflatex",
             "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-shell-escape",
-            "-file-line-error",
-            "%DOC%"
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
             ]
-          },
-          {
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
             "name": "bibtex",
             "command": "bibtex",
             "args": [
-            "%DOCFILE%"
+                "%DOCFILE%"
             ]
-          }
-        ],
+        }
+    ],
     "latex-workshop.latex.recipes": [
-          {
-            "name": "xelatex",
+        {
+            "name": "XeLaTeX",
             "tools": [
-            "xelatex"
-                        ]
-                  },
-          {
-            "name": "latexmk",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
             "tools": [
-            "latexmk"
-                        ]
-          },
-
-          {
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
             "name": "pdflatex -> bibtex -> pdflatex*2",
             "tools": [
-            "pdflatex",
-            "bibtex",
-            "pdflatex",
-            "pdflatex"
-                        ]
-          }
-        ],
-    "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.hover.preview.enabled":true,
-    "latex-workshop.hover.preview.scale":0.7,
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
     "latex-workshop.latex.clean.fileTypes": [
         "*.aux",
         "*.bbl",
@@ -212,7 +233,10 @@
         "*.log",
         "*.fdb_latexmk"
     ],
-    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+
     "security.workspace.trust.untrustedFiles": "open",
     "git.confirmSync": false,
     "notebook.markup.fontSize": 16,
@@ -226,7 +250,6 @@
     "liveServer.settings.donotVerifyTags": true,
     "liveServer.settings.donotShowInfoMsg": true,
     "editor.guides.bracketPairs": true,
-    "vscode-neovim.neovimExecutablePaths.win32": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
     "http.proxy": "http://127.0.0.1:7890"
 
 }
