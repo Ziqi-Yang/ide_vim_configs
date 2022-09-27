@@ -33,7 +33,7 @@ map <leader>yw :%y+<CR>
 " map <leader>pp "+p
 map <leader>pp <Action>($Paste)
 
-map <leader>ce <Action>(Run)
+map <leader>zca <Action>(Run)
 map <leader>cc <Action>(ChooseRunConfiguration)
 map <leader>cd <Action>(Debug)
 map <leader>cs <Action>(Stop)
