@@ -59,6 +59,7 @@ map <leader>tz <Action>(ToggleZenMode)
 map <leader>tf <Action>(ToggleFullScreen)
 map <leader>tp <Action>(TogglePresentationMode)
 map <leader>tr <Action>(ToggleReadOnlyAttribute)
+map <leader>ts <Action>(ActivateStructureToolWindow)
 " 安装tranlsation插件
 map <leader>tt <Action>($ShowTranslationDialogAction)
 map <leader>tw <Action>($EditorTranslateAction)
