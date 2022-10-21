@@ -48,6 +48,7 @@ endif
 
 map <leader>rf <Action>(ReformatCode)
 map <leader>re <Action>(RenameElement)
+map <leader>rr <Action>(Replace)
 
 map <leader>ff <Action>(Find)
 map <leader>fu <Action>(FindUsages)
